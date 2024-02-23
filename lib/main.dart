@@ -18,12 +18,48 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Image(
-          // image: NetworkImage('https://media.licdn.com/dms/image/D4D03AQH6Xd1tc4vBeA/profile-displayphoto-shrink_800_800/0/1692807308864?e=2147483647&v=beta&t=uS3VDYO9gDnq4z0uMWl-qqF2K_VjijaRy5bVNwdwSB8')
-          image: AssetImage('space-2.jpg'),
-        ),
-        // child: Image.asset('assets/space-2.jpg')
-        // child: Image.network("https://media.licdn.com/dms/image/D4D03AQH6Xd1tc4vBeA/profile-displayphoto-shrink_800_800/0/1692807308864?e=2147483647&v=beta&t=uS3VDYO9gDnq4z0uMWl-qqF2K_VjijaRy5bVNwdwSB8")
+        // child: Icon(
+        //   Icons.airport_shuttle,
+        //   color: Colors.lightBlue,
+        //   size: 50.0,
+        // )
+        // child: TextButton(
+        //   onPressed: ()=>{
+        //     debugPrint("You clicked me")
+        //   },
+        //   child: Text("click me"),
+        //   style: ButtonStyle(
+        //     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+        //   ),
+        // ),
+        // child: ElevatedButtonTheme(
+        //   onPressed: ()=>{
+        //     debugPrint("You clicked me")
+        //   },
+        //   child: Text("click me"),
+        //   style: ButtonStyle(
+        //     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+        //   ),
+        // ),
+        // child: OutlinedButtonTheme(
+        //   onPressed: ()=>{
+        //     debugPrint("You clicked me")
+        //   },
+        //   child: Text("click me"),
+        //   style: ButtonStyle(
+        //     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+        //   ),
+        // ),
+
+        child: TextButton.icon(
+          onPressed: ()=> {
+            debugPrint("You clicked me..")
+          },
+          icon: Icon(
+            Icons.mail
+          ),
+          label: Text("Mail Me!"),
+        )
       ),
       floatingActionButton: FloatingActionButton(
         child: Text("click"),
