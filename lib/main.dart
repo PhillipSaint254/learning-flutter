@@ -17,49 +17,17 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
         centerTitle: true,
       ),
-      body: Center(
-        // child: Icon(
-        //   Icons.airport_shuttle,
-        //   color: Colors.lightBlue,
-        //   size: 50.0,
-        // )
-        // child: TextButton(
-        //   onPressed: ()=>{
-        //     debugPrint("You clicked me")
-        //   },
-        //   child: Text("click me"),
-        //   style: ButtonStyle(
-        //     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-        //   ),
-        // ),
-        // child: ElevatedButtonTheme(
-        //   onPressed: ()=>{
-        //     debugPrint("You clicked me")
-        //   },
-        //   child: Text("click me"),
-        //   style: ButtonStyle(
-        //     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-        //   ),
-        // ),
-        // child: OutlinedButtonTheme(
-        //   onPressed: ()=>{
-        //     debugPrint("You clicked me")
-        //   },
-        //   child: Text("click me"),
-        //   style: ButtonStyle(
-        //     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-        //   ),
-        // ),
-
-        child: TextButton.icon(
-          onPressed: ()=> {
-            debugPrint("You clicked me..")
-          },
-          icon: Icon(
-            Icons.mail
-          ),
-          label: Text("Mail Me!"),
-        )
+      // body: Container(
+      //   // padding: EdgeInsets.all(20.0),
+      //   // padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+      //   padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
+      //   margin: EdgeInsets.all(30.0),
+      //   color: Colors.grey[400],
+      //   child: Text("Hell No."),
+      // ),
+      body: Padding(
+        child: Text("Hell No..."),
+        padding: EdgeInsets.all(50.0),
       ),
       floatingActionButton: FloatingActionButton(
         child: Text("click"),
