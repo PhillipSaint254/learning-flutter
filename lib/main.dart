@@ -17,17 +17,28 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
         centerTitle: true,
       ),
-      // body: Container(
-      //   // padding: EdgeInsets.all(20.0),
-      //   // padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      //   padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-      //   margin: EdgeInsets.all(30.0),
-      //   color: Colors.grey[400],
-      //   child: Text("Hell No."),
-      // ),
-      body: Padding(
-        child: Text("Hell No..."),
-        padding: EdgeInsets.all(50.0),
+      body: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceCenter,
+        // mainAxisAlignment: MainAxisAlignment.spaceEnd,
+        // mainAxisAlignment: MainAxisAlignment.spaceStart,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.end,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Hell No World"),
+          TextButton(
+              onPressed: (){},
+              child: Text("Click Me")
+          ),
+          Container(
+            color: Colors.cyan,
+            padding: EdgeInsets.all(30.0),
+            child: Text("Inside container"),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Text("click"),
