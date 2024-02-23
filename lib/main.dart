@@ -17,27 +17,36 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
         centerTitle: true,
       ),
-      body: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        // mainAxisAlignment: MainAxisAlignment.spaceCenter,
-        // mainAxisAlignment: MainAxisAlignment.spaceEnd,
-        // mainAxisAlignment: MainAxisAlignment.spaceStart,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.end,
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text("Hell No World"),
-          TextButton(
-              onPressed: (){},
-              child: Text("Click Me")
+          Row(
+            children: [
+              Text("Hellow"),
+              Text("Earth")
+            ],
           ),
           Container(
             color: Colors.cyan,
+            padding: EdgeInsets.all(20.0),
+            child: Text("one"),
+          ),
+          Container(
+            color: Colors.pink,
             padding: EdgeInsets.all(30.0),
-            child: Text("Inside container"),
-          )
+            child: Text("two"),
+          ),
+          Container(
+            color: Colors.amber,
+            padding: EdgeInsets.all(40.0),
+            child: Text("three"),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
