@@ -13,7 +13,11 @@ class Home extends StatelessWidget {
           children: [
             TextButton.icon(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/location');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChooseLocation())
+                  );
+                  // Navigator.pushNamed(context, '/location');
                 },
                 icon: Icon(Icons.edit_location),
                 label: Text("Edit location"),
@@ -28,13 +32,13 @@ class Home extends StatelessWidget {
 void main() {
   runApp(
     MaterialApp(
-      initialRoute: '/',
+      // initialRoute: '/',
       routes: {
-        '/': (context) => Loading(),
-        '/home': (context) => Home(),
-        '/location': (context) => ChooseLocation() 
+        '/': (context) => const Loading(),
+        '/home': (context) => const Home(),
+        '/location': (context) => const ChooseLocation()
       },
-      home: Home(),
+      // home: Home(),
     ),
   );
 }
