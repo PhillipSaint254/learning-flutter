@@ -1,17 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:world_time/pages/choose_location.dart';
+import 'package:world_time/pages/loading.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Text("Home screen")),
+      body: SafeArea(
+        child: Column(
+          children: [
+            TextButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/location');
+                },
+                icon: Icon(Icons.edit_location),
+                label: Text("Edit location"),
+            )
+          ],
+        ),
+      ),
     );
   }
+}
+
+void main() {
+  runApp(
+    MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Loading(),
+        '/home': (context) => Home(),
+        '/location': (context) => ChooseLocation() 
+      },
+      home: Home(),
+    ),
+  );
 }
