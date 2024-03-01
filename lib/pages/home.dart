@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ChooseLocation())
+                    MaterialPageRoute(builder: (context) => Loading())
                   );
                   // Navigator.pushNamed(context, '/location');
                 },
