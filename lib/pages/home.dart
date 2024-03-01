@@ -32,13 +32,13 @@ class Home extends StatelessWidget {
 void main() {
   runApp(
     MaterialApp(
-      // initialRoute: '/',
+      initialRoute: '/',
+      home: Loading(),
       routes: {
         '/': (context) => const Loading(),
         '/home': (context) => const Home(),
         '/location': (context) => const ChooseLocation()
       },
-      // home: Home(),
     ),
   );
 }
