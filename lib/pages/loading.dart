@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
-  const Loading({super.key});
+  const Loading({Key? key}) : super(key: key);
 
   @override
   State<Loading> createState() => _LoadingState();
@@ -10,22 +11,25 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  String time = 'loading';
-
   void setupWorldTime() async {
     WorldTime instance = WorldTime(location: "Nairobi", flag: "nairobi.png", url: "Africa/Nairobi");
     await instance.getTime();
-    // print(instance.time);
-    Navigator.pushReplacementNamed(context, "/home", arguments: {
-      'location': instance.location,
-      'flag': instance.flag,
-      'time': instance.time,
-    });
+
+    // Check if instance.time is not null before navigating
+    if (instance.time != null) {
+      Navigator.of(context).pushReplacementNamed("/home", arguments: {
+        'location': instance.location,
+        'flag': instance.flag,
+        'time': instance.time,
+      });
+    } else {
+      // Handle the case when time is null, for example, by displaying an error message or retrying.
+      setupWorldTime();
+    }
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     setupWorldTime();
   }
@@ -33,9 +37,12 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(50.0),
-        child: Text(time),
+      backgroundColor: Colors.blue[900],
+      body: Center(
+        child: SpinKitFadingCube(
+          color: Colors.white,
+          size: 50.0,
+        ),
       ),
     );
   }

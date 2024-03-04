@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class WorldTime {
   String location; //name for the UI
-  late String time; // the time in the location
+  String time = ''; // the time in the location
   String flag; // url to the flag icon
   String url; // location url for api endpoint
 
