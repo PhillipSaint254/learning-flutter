@@ -21,6 +21,7 @@ class _LoadingState extends State<Loading> {
         'location': instance.location,
         'flag': instance.flag,
         'time': instance.time,
+        'isDaytime': instance.isDaytime,
       });
     } else {
       // Handle the case when time is null, for example, by displaying an error message or retrying.
