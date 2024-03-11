@@ -39,8 +39,16 @@ class _ChooseLocationState extends State<ChooseLocation> {
               padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
               child: Card(
                 child: ListTile(
-                  onTap: () {
-                    print(locations[index].location);
+                  onTap: () async {
+                    WorldTime location = locations[index];
+                    WorldTime instance = WorldTime(location: location.location, flag: location.flag, url: location.url);
+                    await instance.getTime();
+                    Navigator.pushReplacementNamed(context, '/home', arguments: {
+                      'location': instance.location,
+                      'flag': instance.flag,
+                      'time': instance.time,
+                      'isDaytime': instance.isDaytime,
+                    });
                   },
                   title: Text(locations[index].location),
                   leading: CircleAvatar(
